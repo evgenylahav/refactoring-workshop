@@ -1,6 +1,5 @@
 import unittest
-# from statement import statement, html_statement
-from statement_step7 import statement, html_statement
+from statement import statement, html_statement
 
 
 class TestStatement(unittest.TestCase):
@@ -59,6 +58,6 @@ class TestStatement(unittest.TestCase):
     def test_html_statement(self):
         self.assertEqual(html_statement(self.invoices, self.plays), self.html_statement_result)
 
-    # def test_error_statement(self):
-    #     with self.assertRaisesRegex(ValueError, "unknown type: family"):
-    #         statement(self.invoices, self.err_plays)
+    def test_error_statement(self):
+        with self.assertRaisesRegex(ValueError, "unknown type: family"):
+            statement(self.invoices, self.err_plays)
